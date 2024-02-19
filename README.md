@@ -8,9 +8,9 @@ The only thing needed is the BP_CollectibleItemManager (or CPP_CollectibleItemMa
 In the blueprint version there is a simple UI who show the current score.
 All the subclasses of CPP_CollectibleItem can be put in scene as well.
 
-## CPP_CollectibleItemManager
+## BP_CollectibleItemManager
 
-CPP_CollectibleItemManager have some events, functions and properties for get score info and set new points:
+BP_CollectibleItemManager have some events, functions and properties for get score info and set new points:
 
 ### ScoreChanged
 
