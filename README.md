@@ -4,12 +4,17 @@
 
 ## Setup
 
-The only thing needed is the CPP_CollectibleItemManager who must be put in the scene.
+The only thing needed is the BP_CollectibleItemManager (or CPP_CollectibleItemManager) who must be put in the scene.
+In the blueprint version there is a simple UI who show the current score.
 All the subclasses of CPP_CollectibleItem can be put in scene as well.
 
 ## CPP_CollectibleItemManager
 
-CPP_CollectibleItemManager have some functions for get score info and set new points:
+CPP_CollectibleItemManager have some events, functions and properties for get score info and set new points:
+
+### ScoreChanged
+
+> Event who fire when score change.
 
 ### void AddPoints(int Points)
 
@@ -22,3 +27,7 @@ CPP_CollectibleItemManager have some functions for get score info and set new po
 ### void ResetCurrentScore()
 
 > Simple function who reset the current score.
+
+### bool PrintDebug
+
+> Check for print debug message in editor.

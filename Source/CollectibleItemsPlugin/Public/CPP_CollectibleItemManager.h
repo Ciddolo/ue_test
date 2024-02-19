@@ -6,6 +6,8 @@
 
 #include "CPP_CollectibleItemManager.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FScoreChanged);
+
 UCLASS()
 class COLLECTIBLEITEMSPLUGIN_API ACPP_CollectibleItemManager : public AActor
 {
@@ -16,12 +18,18 @@ private:
 		int CurrentScore = 0;
 
 public:
-	UFUNCTION(Category = "Score")
+	UPROPERTY(BlueprintAssignable, Category = "Score")
+		FScoreChanged ScoreChanged;
+
+	UFUNCTION(BlueprintCallable, Category = "Score")
 		void AddPoints(int Points);
 
-	UFUNCTION(Category = "Score")
+	UFUNCTION(BlueprintCallable, Category = "Score")
 		int GetCurrentScore();
 
-	UFUNCTION(Category = "Score")
+	UFUNCTION(BlueprintCallable, Category = "Score")
 		void ResetCurrentScore();
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Data")
+		bool PrintDebug = false;
 };

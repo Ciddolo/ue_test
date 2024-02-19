@@ -8,7 +8,12 @@ void ACPP_CollectibleItemManager::AddPoints(int Points)
 
 	CurrentScore += Points;
 
-	Print("+" + FString::FromInt(Points) + " POINTS!\nSCORE: " + FString::FromInt(CurrentScore));
+	if (PrintDebug)
+	{
+		Print("+" + FString::FromInt(Points) + " POINTS!\nSCORE: " + FString::FromInt(CurrentScore));
+	}
+
+	ACPP_CollectibleItemManager::ScoreChanged.Broadcast();
 }
 
 int ACPP_CollectibleItemManager::GetCurrentScore()
